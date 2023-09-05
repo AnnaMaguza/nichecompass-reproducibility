@@ -5,3 +5,7 @@
 datasets/srt_data/
 .ipynb_checkpoints
 datasets/gp_data
+*.pkl
+artifacts/nanostring_cosmx_human_nsclc/models/02062023_065414/one-hop-norm_reference/nanostring_cosmx_human_nsclc_one-hop-norm_reference.h5ad
+artifacts/nanostring_cosmx_human_nsclc/models/02062023_065414/one-hop-norm_reference/model_params.pt
+artifacts/nanostring_cosmx_human_nsclc/models/02062023_065414/one-hop-norm_reference/var_names.csv
