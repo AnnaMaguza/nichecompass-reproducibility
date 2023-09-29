@@ -10,3 +10,4 @@ datasets/gp_data
 .DS_Store
 *.DS_Store
 artifacts/nanostring_cosmx_human_nsclc/models/
+artifacts/nanostring_cosmx_human_nsclc/figures/
