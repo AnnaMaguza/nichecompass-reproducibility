@@ -5,3 +5,7 @@
 datasets/srt_data/
 .ipynb_checkpoints
 datasets/gp_data
+artifacts/
+.DS_Store
+*.DS_Store
+*.ipynb_checkpoints
