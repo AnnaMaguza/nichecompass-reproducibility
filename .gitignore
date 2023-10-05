@@ -6,7 +6,8 @@ datasets/srt_data/
 *.ipynb_checkpoints
 .ipynb_checkpoints
 datasets/gp_data
-artifacts/
+artifacts/nanostring_cosmx_human_nsclc/models
+artifacts/nanostring_cosmx_human_nsclc/results
 .DS_Store
 *.DS_Store
 *.ipynb_checkpoints
