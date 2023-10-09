@@ -145,3 +145,27 @@ New learning rate is 1.0000000000000002e-06.
 
 Epoch 71/400 |███-----------------| 17.8% val_auroc_score: 0.9334; val_auprc_score: 0.9872; val_best_acc_score: 0.9434; val_best_f1_score: 0.9685; train_kl_reg_loss: 14752.0946; train_edge_recon_loss: 603841.8821; train_cat_covariates_contrastive_loss: 945825.1627; train_gene_expr_recon_loss: 1591187.2084; train_masked_gp_l1_reg_loss: 0.0000; train_group_lasso_reg_loss: 0.0000; train_addon_gp_l1_reg_loss: 0.0000; train_global_loss: 3155606.3465; train_optim_loss: 3155606.3465; val_kl_reg_loss: 14565.6481; val_edge_recon_loss: 625899.7664; val_cat_covariates_contrastive_loss: 945886.4574; val_gene_expr_recon_loss: 1591797.9691; val_masked_gp_l1_reg_loss: 0.0000; val_group_lasso_reg_loss: 0.0000; val_addon_gp_l1_reg_loss: 0.0000; val_global_loss: 3178149.8372; val_optim_loss: 3178149.8372
 Epoch 72/400 |███-----------------| 18.0% val_auroc_score: 0.9339; val_auprc_score: 0.9874; val_best_acc_score: 0.9432; val_best_f1_score: 0.9684; train_kl_reg_loss: 14760.3650; train_edge_recon_loss: 603723.2537; train_cat_covariates_contrastive_loss: 945856.0823; train_gene_expr_recon_loss: 1590971.2936; train_masked_gp_l1_reg_loss: 0.0000; train_group_lasso_reg_loss: 0.0000; train_addon_gp_l1_reg_loss: 0.0000; train_global_loss: 3155310.9966; train_optim_loss: 3155310.9966; val_kl_reg_loss: 14594.1096; val_edge_recon_loss: 626996.0010; val_cat_covariates_contrastive_loss: 945931.5540; val_gene_expr_recon_loss: 1591358.4992; val_masked_gp_l1_reg_loss: 0.0000; val_group_lasso_reg_loss: 0.0000; val_addon_gp_l1_reg_loss: 0.0000; val_global_loss: 3178880.1674; val_optim_loss: 3178880.1674
+Epoch 73/400 |███-----------------| 18.2% val_auroc_score: 0.9348; val_auprc_score: 0.9876; val_best_acc_score: 0.9439; val_best_f1_score: 0.9688; train_kl_reg_loss: 14757.2097; train_edge_recon_loss: 605370.7109; train_cat_covariates_contrastive_loss: 945708.6006; train_gene_expr_recon_loss: 1591408.3745; train_masked_gp_l1_reg_loss: 0.0000; train_group_lasso_reg_loss: 0.0000; train_addon_gp_l1_reg_loss: 0.0000; train_global_loss: 3157244.8953; train_optim_loss: 3157244.8953; val_kl_reg_loss: 14600.2255; val_edge_recon_loss: 625353.6993; val_cat_covariates_contrastive_loss: 945802.8611; val_gene_expr_recon_loss: 1592148.4579; val_masked_gp_l1_reg_loss: 0.0000; val_group_lasso_reg_loss: 0.0000; val_addon_gp_l1_reg_loss: 0.0000; val_global_loss: 3177905.2438; val_optim_loss: 3177905.2438
+Epoch 74/400 |███-----------------| 18.5% val_auroc_score: 0.9368; val_auprc_score: 0.9882; val_best_acc_score: 0.9439; val_best_f1_score: 0.9688; train_kl_reg_loss: 14741.0212; train_edge_recon_loss: 604730.8879; train_cat_covariates_contrastive_loss: 945799.5141; train_gene_expr_recon_loss: 1590987.1882; train_masked_gp_l1_reg_loss: 0.0000; train_group_lasso_reg_loss: 0.0000; train_addon_gp_l1_reg_loss: 0.0000; train_global_loss: 3156258.6101; train_optim_loss: 3156258.6101; val_kl_reg_loss: 14590.0512; val_edge_recon_loss: 623173.9830; val_cat_covariates_contrastive_loss: 945864.6530; val_gene_expr_recon_loss: 1592524.3333; val_masked_gp_l1_reg_loss: 0.0000; val_group_lasso_reg_loss: 0.0000; val_addon_gp_l1_reg_loss: 0.0000; val_global_loss: 3176153.0193; val_optim_loss: 3176153.0193
+
+Stopping early: metric has not improved more than 0.0 in the last 8 epochs.
+If the early stopping criterion is too strong, please instantiate it with different parameters in the train method.
+Model training finished after 1234 min 44 sec.
+Using best model state, which was in epoch 66.
+
+--- MODEL EVALUATION ---
+val AUROC score: 0.9254
+val AUPRC score: 0.9836
+val best accuracy score: 0.9426
+val best F1 score: 0.9681
+val target rna MSE score: 0.1928
+val source rna MSE score: 0.1750
+Val cat covariate0 mean sim diff: -0.0007
+Val cat covariate1 mean sim diff: -0.0585
+Val cat covariate2 mean sim diff: 0.0002
+
+Computing neighbor graph...
+
+Computing UMAP embedding...
+
+Saving model...
