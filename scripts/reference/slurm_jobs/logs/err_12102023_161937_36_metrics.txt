@@ -1,0 +1,127 @@
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Observation names are not unique. To make them unique, call `.obs_names_make_unique`.
+  utils.warn_names_duplicates("obs")
+Computing neighbors:   0%|          | 0/1 [00:00<?, ?it/s]/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1063: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1071: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1086: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/umap_.py:660: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+Computing neighbors: 100%|██████████| 1/1 [11:36<00:00, 696.44s/it]Computing neighbors: 100%|██████████| 1/1 [11:36<00:00, 696.47s/it]
+Embeddings:   0%|[32m          [0m| 0/1 [00:00<?, ?it/s]
+Metrics:   0%|[34m          [0m| 0/10 [00:00<?, ?it/s][A
+Metrics:   0%|[34m          [0m| 0/10 [00:00<?, ?it/s, Bio conservation: silhouette_label][A
+Metrics:  10%|[34m█         [0m| 1/10 [2:07:29<19:07:29, 7649.96s/it, Bio conservation: silhouette_label][A
+Metrics:  10%|[34m█         [0m| 1/10 [2:07:30<19:07:29, 7649.96s/it, Bio conservation: clisi_knn]       [A
+Metrics:  20%|[34m██        [0m| 2/10 [2:07:39<7:00:44, 3155.54s/it, Bio conservation: clisi_knn] [A
+Metrics:  20%|[34m██        [0m| 2/10 [2:07:39<7:00:44, 3155.54s/it, Batch correction: silhouette_batch][A
+Metrics:  30%|[34m███       [0m| 3/10 [2:34:59<4:47:24, 2463.55s/it, Batch correction: silhouette_batch][A
+Metrics:  30%|[34m███       [0m| 3/10 [2:34:59<4:47:24, 2463.55s/it, Batch correction: ilisi_knn]       [A
+Metrics:  40%|[34m████      [0m| 4/10 [2:35:07<2:29:24, 1494.15s/it, Batch correction: ilisi_knn][A
+Metrics:  40%|[34m████      [0m| 4/10 [2:35:07<2:29:24, 1494.15s/it, Batch correction: kbet_per_label][A
+Metrics:  50%|[34m█████     [0m| 5/10 [2:43:04<1:33:56, 1127.32s/it, Batch correction: kbet_per_label][A
+Metrics:  50%|[34m█████     [0m| 5/10 [2:43:04<1:33:56, 1127.32s/it, Batch correction: pcr_comparison][AEmbeddings:   0%|[32m          [0m| 0/1 [2:43:10<?, ?it/s]
+Traceback (most recent call last):
+  File "/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/scripts/reference/../nsclc_integration_metrics.py", line 36, in <module>
+    bm.benchmark()
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 226, in benchmark
+    metric_value = getattr(MetricAnnDataAPI, metric_name)(ad, metric_fn)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 91, in <lambda>
+    pcr_comparison = lambda ad, fn: fn(ad.obsm[_X_PRE], ad.X, ad.obs[_BATCH], categorical=True)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/_pcr_comparison.py", line 44, in pcr_comparison
+    pcr_post = principal_component_regression(X_post, covariate, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pcr.py", line 51, in principal_component_regression
+    pca_results = pca(X, n_components=n_components)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pca.py", line 110, in pca
+    u, s, v, variance, variance_ratio = _pca(X)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pca.py", line 153, in _pca
+    u, s, v = jnp.linalg.svd(X_, full_matrices=False)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/numpy/linalg.py", line 92, in svd
+    return lax_linalg.svd(a, full_matrices=full_matrices, compute_uv=compute_uv)
+jax._src.source_info_util.JaxStackTraceBeforeTransformation: RuntimeError: jaxlib/gpu/solver.cc:317: operation gpusolverDnSgesvd_bufferSize( handle.get(), jobu, jobvt, m, n, &lwork) failed: cuSolver invalid value error
+
+The preceding stack trace is the source of the JAX operation that, once transformed by JAX, triggered the following exception.
+
+--------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/scripts/reference/../nsclc_integration_metrics.py", line 36, in <module>
+    bm.benchmark()
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 226, in benchmark
+    metric_value = getattr(MetricAnnDataAPI, metric_name)(ad, metric_fn)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 91, in <lambda>
+    pcr_comparison = lambda ad, fn: fn(ad.obsm[_X_PRE], ad.X, ad.obs[_BATCH], categorical=True)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/_pcr_comparison.py", line 44, in pcr_comparison
+    pcr_post = principal_component_regression(X_post, covariate, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pcr.py", line 51, in principal_component_regression
+    pca_results = pca(X, n_components=n_components)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pca.py", line 110, in pca
+    u, s, v, variance, variance_ratio = _pca(X)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 166, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 248, in cache_miss
+    outs, out_flat, out_tree, args_flat = _python_pjit_helper(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 195, in _python_pjit_helper
+    out_flat = pjit_p.bind(*args_flat, **params)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/core.py", line 2591, in bind
+    return self.bind_with_trace(top_trace, args, params)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/core.py", line 362, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/core.py", line 816, in process_primitive
+    return primitive.impl(*tracers, **params)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 1246, in _pjit_call_impl
+    compiled = _pjit_lower(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 1332, in _pjit_lower
+    return _pjit_lower_cached(jaxpr, in_shardings, out_shardings, *args, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 1391, in _pjit_lower_cached
+    return pxla.lower_sharding_computation(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/profiler.py", line 314, in wrapper
+    return func(*args, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/pxla.py", line 2571, in lower_sharding_computation
+    lowering_result = mlir.lower_jaxpr_to_module(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/mlir.py", line 742, in lower_jaxpr_to_module
+    lower_jaxpr_to_fun(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/mlir.py", line 1037, in lower_jaxpr_to_fun
+    out_vals, tokens_out = jaxpr_subcomp(ctx.replace(name_stack=callee_name_stack),
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/mlir.py", line 1172, in jaxpr_subcomp
+    ans = rule(rule_ctx, *map(_unwrap_singleton_ir_values, in_nodes),
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/pjit.py", line 1470, in _pjit_lowering
+    func = mlir.lower_jaxpr_to_fun(
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/mlir.py", line 1037, in lower_jaxpr_to_fun
+    out_vals, tokens_out = jaxpr_subcomp(ctx.replace(name_stack=callee_name_stack),
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/interpreters/mlir.py", line 1172, in jaxpr_subcomp
+    ans = rule(rule_ctx, *map(_unwrap_singleton_ir_values, in_nodes),
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jax/_src/lax/linalg.py", line 1669, in _svd_cpu_gpu_lowering
+    s, u, vt, info = gesvd_impl(operand_aval.dtype, operand,
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jaxlib/gpu_solver.py", line 402, in _gesvd_hlo
+    lwork, opaque = gpu_solver.build_gesvd_descriptor(
+jax._src.traceback_util.UnfilteredStackTrace: RuntimeError: jaxlib/gpu/solver.cc:317: operation gpusolverDnSgesvd_bufferSize( handle.get(), jobu, jobvt, m, n, &lwork) failed: cuSolver invalid value error
+
+The stack trace below excludes JAX-internal frames.
+The preceding is the original exception that occurred, unmodified.
+
+--------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/scripts/reference/../nsclc_integration_metrics.py", line 36, in <module>
+    bm.benchmark()
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 226, in benchmark
+    metric_value = getattr(MetricAnnDataAPI, metric_name)(ad, metric_fn)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/benchmark/_core.py", line 91, in <lambda>
+    pcr_comparison = lambda ad, fn: fn(ad.obsm[_X_PRE], ad.X, ad.obs[_BATCH], categorical=True)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/_pcr_comparison.py", line 44, in pcr_comparison
+    pcr_post = principal_component_regression(X_post, covariate, **kwargs)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pcr.py", line 51, in principal_component_regression
+    pca_results = pca(X, n_components=n_components)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/scib_metrics/utils/_pca.py", line 110, in pca
+    u, s, v, variance, variance_ratio = _pca(X)
+  File "/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/jaxlib/gpu_solver.py", line 402, in _gesvd_hlo
+    lwork, opaque = gpu_solver.build_gesvd_descriptor(
+RuntimeError: jaxlib/gpu/solver.cc:317: operation gpusolverDnSgesvd_bufferSize( handle.get(), jobu, jobvt, m, n, &lwork) failed: cuSolver invalid value error
+
+                                                                                               [A

@@ -1,0 +1,27 @@
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Observation names are not unique. To make them unique, call `.obs_names_make_unique`.
+  utils.warn_names_duplicates("obs")
+Computing neighbors:   0%|          | 0/1 [00:00<?, ?it/s]/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1063: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1071: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/distances.py:1086: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+/home/icb/irene.bonafonte/miniconda3/envs/nichecompass/lib/python3.9/site-packages/umap/umap_.py:660: NumbaDeprecationWarning: [1mThe 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.[0m
+  @numba.jit()
+Computing neighbors: 100%|██████████| 1/1 [09:46<00:00, 586.69s/it]Computing neighbors: 100%|██████████| 1/1 [09:46<00:00, 586.75s/it]
+Embeddings:   0%|[32m          [0m| 0/1 [00:00<?, ?it/s]
+Metrics:   0%|[34m          [0m| 0/10 [00:00<?, ?it/s][A
+Metrics:   0%|[34m          [0m| 0/10 [00:00<?, ?it/s, Bio conservation: silhouette_label][A
+Metrics:  10%|[34m█         [0m| 1/10 [29:29<4:25:23, 1769.30s/it, Bio conservation: silhouette_label][A
+Metrics:  10%|[34m█         [0m| 1/10 [29:29<4:25:23, 1769.30s/it, Bio conservation: clisi_knn]       [A
+Metrics:  20%|[34m██        [0m| 2/10 [29:36<1:37:43, 732.95s/it, Bio conservation: clisi_knn] [A
+Metrics:  20%|[34m██        [0m| 2/10 [29:36<1:37:43, 732.95s/it, Batch correction: silhouette_batch][A
+Metrics:  30%|[34m███       [0m| 3/10 [35:32<1:05:23, 560.46s/it, Batch correction: silhouette_batch][A
+Metrics:  30%|[34m███       [0m| 3/10 [35:32<1:05:23, 560.46s/it, Batch correction: ilisi_knn]       [A
+Metrics:  40%|[34m████      [0m| 4/10 [35:37<34:09, 341.50s/it, Batch correction: ilisi_knn]  [A
+Metrics:  40%|[34m████      [0m| 4/10 [35:37<34:09, 341.50s/it, Batch correction: kbet_per_label][A
+Metrics:  50%|[34m█████     [0m| 5/10 [42:15<30:08, 361.61s/it, Batch correction: kbet_per_label][A
+Metrics:  50%|[34m█████     [0m| 5/10 [42:15<30:08, 361.61s/it, Batch correction: pcr_comparison][A
+Metrics:  60%|[34m██████    [0m| 6/10 [42:22<16:04, 241.06s/it, Batch correction: pcr_comparison][AEmbeddings: 100%|[32m██████████[0m| 1/1 [42:22<00:00, 2542.16s/it]Embeddings: 100%|[32m██████████[0m| 1/1 [42:22<00:00, 2542.16s/it]
+
+                                                                                          [A
