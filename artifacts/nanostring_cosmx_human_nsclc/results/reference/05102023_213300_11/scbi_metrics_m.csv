@@ -1,0 +1,3 @@
+Embedding,Silhouette label,cLISI,Silhouette batch,iLISI,KBET,PCR comparison,Batch correction,Bio conservation,Total
+nichecompass_latent,0.4951672162860632,0.963913643360138,0.9004951,0.06521894250597272,0.05598741332132313,0.968363638056704,0.49751627645657276,0.7295404298231005,0.6367307684764895
+Metric Type,Bio conservation,Bio conservation,Batch correction,Batch correction,Batch correction,Batch correction,Aggregate score,Aggregate score,Aggregate score
