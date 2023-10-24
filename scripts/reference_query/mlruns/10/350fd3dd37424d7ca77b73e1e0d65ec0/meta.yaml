@@ -1,0 +1,15 @@
+artifact_uri: file:///home/aih/sebastian.birk/workspace/projects/nichecompass-reproducibility/scripts/reference_query/mlruns/10/350fd3dd37424d7ca77b73e1e0d65ec0/artifacts
+end_time: 1698065694325
+entry_point_name: ''
+experiment_id: '10'
+lifecycle_stage: active
+name: ''
+run_id: 350fd3dd37424d7ca77b73e1e0d65ec0
+run_uuid: 350fd3dd37424d7ca77b73e1e0d65ec0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698063775132
+status: 3
+tags: []
+user_id: irene.bonafonte

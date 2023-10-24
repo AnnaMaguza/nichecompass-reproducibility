@@ -6,10 +6,13 @@ import gc
 import argparse
 from nichecompass.models import NicheCompass
 from matplotlib.colors import to_hex
+import os
 
 def load_model(suffix, cluster=False, latent_leiden_resolution=0.5):
     model_folder = glob.glob(f'/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/artifacts/{dataset}/models/{model}/*_{suffix}')[0]
     figure_path = model_folder.replace('models','figures')
+    if not os.path.exists(figure_path):
+        os.makedirs(figure_path)
     adata = sc.read_h5ad(f"{model_folder}/{dataset}_{model}.h5ad")
     adata.obs_names = adata.obs['cell_ID'].values
     adata.obs['cell type'] = adata.obs['cell_type_original'].map({
@@ -29,10 +32,9 @@ def load_model(suffix, cluster=False, latent_leiden_resolution=0.5):
         new_batches = adata.obs.loc[adata.obs.mapping_entity == 'query','batch'].unique()
         sc.pl.umap(adata[adata.obs.mapping_entity == 'reference'], color=['batch','cell type','niche'], ncols=4, wspace=0.5, size=0.5, show=False)
         plt.savefig(f"{figure_path}/umap_reference.png", bbox_inches="tight")
-        sc.pl.umap(adata[adata.obs.batch != new_batches[1]], color=['mapping_entity','cell type','niche'], ncols=4, wspace=0.5, size=0.5, show=False)
-        plt.savefig(f"{figure_path}/umap_reference_query_{new_batches[0]}.png", bbox_inches="tight")
-        sc.pl.umap(adata[adata.obs.batch != new_batches[0]], color=['mapping_entity','cell type','niche'], ncols=4, wspace=0.5, size=0.5, show=False)
-        plt.savefig(f"{figure_path}/umap_reference_query_{new_batches[1]}.png", bbox_inches="tight")
+        for nbatch in new_batches:
+            sc.pl.umap(adata[(adata.obs.batch == nbatch)  | (adata.obs.mapping_entity == 'reference')], color=['mapping_entity','cell type','niche'], ncols=4, wspace=0.5, size=0.5, show=False)
+            plt.savefig(f"{figure_path}/umap_reference_query_{nbatch}.png", bbox_inches="tight")
 
     if cluster:
         if not f"latent_leiden_{latent_leiden_resolution}" in adata.obs.columns:
