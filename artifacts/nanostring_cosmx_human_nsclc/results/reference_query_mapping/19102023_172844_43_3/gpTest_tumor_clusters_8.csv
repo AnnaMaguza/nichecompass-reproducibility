@@ -1,0 +1,3 @@
+,category,gene_program,p_h0,p_h1,log_bayes_factor
+0,8,CXCL1_ligand_receptor_GP,0.0725,0.9275,-2.548906232608246
+1,8,EFNB2_ligand_receptor_GP,0.9171341256909593,0.08286587430904069,2.4040303987727603

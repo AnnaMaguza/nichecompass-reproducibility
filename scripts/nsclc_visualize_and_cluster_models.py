@@ -35,14 +35,21 @@ def load_model(suffix, cluster=False, latent_leiden_resolution=0.5):
         for nbatch in new_batches:
             sc.pl.umap(adata[(adata.obs.batch == nbatch)  | (adata.obs.mapping_entity == 'reference')], color=['mapping_entity','cell type','niche'], ncols=4, wspace=0.5, size=0.5, show=False)
             plt.savefig(f"{figure_path}/umap_reference_query_{nbatch}.png", bbox_inches="tight")
+            
 
     if cluster:
-        if not f"latent_leiden_{latent_leiden_resolution}" in adata.obs.columns:
-            sc.tl.leiden(adata, resolution=latent_leiden_resolution, key_added=f"latent_leiden_{latent_leiden_resolution}", neighbors_key="nichecompass_latent")
-            adata.write_h5ad(f"{model_folder}/{dataset}_{model}.h5ad") # re-write file with new metadata  
+        for latent_leiden_resolution in [0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8]:
+            if not f"latent_leiden_{latent_leiden_resolution}" in adata.obs.columns:
+                sc.tl.leiden(adata, resolution=latent_leiden_resolution, key_added=f"latent_leiden_{latent_leiden_resolution}", neighbors_key="nichecompass_latent")
+                adata.write_h5ad(f"{model_folder}/{dataset}_{model}.h5ad") # re-write file with new metadata  
 
-        sc.pl.umap(adata, color=['batch', f'latent_leiden_{latent_leiden_resolution}','cell type','niche','mapping_entity'], ncols=5, wspace=0.5, size=0.5, show=False)
-        plt.savefig(f"{figure_path}/umap_all.png", bbox_inches="tight")        
+                sc.pl.umap(adata, color=['batch', f'latent_leiden_{latent_leiden_resolution}','cell type','niche','mapping_entity'], ncols=5, wspace=0.5, size=0.5, show=False)
+                plt.savefig(f"{figure_path}/umap_all_r{latent_leiden_resolution}.png", bbox_inches="tight") 
+                
+                if model == 'reference_query_mapping':
+                    for nbatch in new_batches:
+                        sc.pl.embedding(adata[(adata.obs.batch == nbatch)], basis="spatial", color=['cell type', f"latent_leiden_{latent_leiden_resolution}"], ncols=2, wspace=0.3, size=3, show=False)
+                        plt.savefig(f"{figure_path}/spatial_{nbatch}_r{latent_leiden_resolution}.png", bbox_inches="tight")
         
 
         # Plot sample 5 for fov effects

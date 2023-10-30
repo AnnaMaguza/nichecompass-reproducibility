@@ -4,10 +4,10 @@
 #SBATCH -e logs/err_43_3_cluster_latent.txt
 #SBATCH -t 24:00:00
 #SBATCH -p gpu_p
-#SBATCH -c 8
+#SBATCH -c 20
 #SBATCH --gres=gpu:1
 #SBATCH --qos=gpu_normal
-#SBATCH --mem=64G
+#SBATCH --mem=128G
 #SBATCH --nice=10000
 source $HOME/.bashrc
 conda activate nichecompass
