@@ -14,18 +14,17 @@ MASKED TARGET RNA DECODER -> n_prior_gp_input: 1613, n_addon_gp_input: 100, n_ca
 MASKED SOURCE RNA DECODER -> n_prior_gp_input: 1613, n_addon_gp_input: 100, n_cat_covariates_embed_input: 38, n_output: 960
 differential testing
 lymphoid_clusters
-7
-8
-9
 macrophage_clusters
 neutrophil_clusters
-4
-5
 stroma_clusters
+4
 1
-9
-tumor_clusters
-0
-2
-3
 6
+9
+8
+10
+tumor_clusters
+2
+5
+7
+11

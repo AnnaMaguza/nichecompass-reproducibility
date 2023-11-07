@@ -12,4 +12,4 @@
 source $HOME/.bashrc
 conda activate nichecompass
 cd /lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/scripts/reference/slurm_jobs
-python ../../differential_gp.py --model_type reference --suffix 43 --leiden_resolution 0.35
+python ../../differential_gp.py --model_type reference --suffix 43 --leiden_resolution 0.45

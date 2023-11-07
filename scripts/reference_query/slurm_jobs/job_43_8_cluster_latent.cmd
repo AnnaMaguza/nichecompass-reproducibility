@@ -3,10 +3,9 @@
 #SBATCH -o logs/out_43_8_cluster_latent.txt
 #SBATCH -e logs/err_43_8_cluster_latent.txt
 #SBATCH -t 24:00:00
-#SBATCH -p gpu_p
+#SBATCH -p cpu_p
 #SBATCH -c 20
-#SBATCH --gres=gpu:1
-#SBATCH --qos=gpu_normal
+#SBATCH --qos=cpu_normal
 #SBATCH --mem=128G
 #SBATCH --nice=10000
 source $HOME/.bashrc

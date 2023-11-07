@@ -1,1 +1,0 @@
-/var/spool/slurmd/job14126206/slurm_script: line 15: 746032 Bus error               (core dumped) python ../../differential_gp.py --model_type reference_query_mapping --suffix 43_8 --leiden_resolution 0.5

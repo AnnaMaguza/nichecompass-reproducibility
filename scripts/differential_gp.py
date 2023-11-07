@@ -63,16 +63,30 @@ a.to_csv(f'{result_folder_path}/gpTest_test.csv')
 for structure, clusters in compare.items():
     print(structure)
     if len(clusters) > 1:
+        '''
+        cl = clusters[0]
+        print(cl)
+        enriched_gps = model.run_differential_gp_tests(
+            cat_key=latent_cluster_key,
+            selected_cats = [cl],
+            comparison_cats=[x for x in clusters if x != cl],
+            log_bayes_factor_thresh=log_bayes_factor_thresh)
+        # res[f'{structure}_{cl}'] = model.adata.uns['nichecompass_differential_gp_test_results'][model.adata.uns['nichecompass_differential_gp_test_results']['p_h1']<0.05]
+        res[f'{structure}_{cl}'] = model.adata.uns[differential_gp_test_results_key]
+        res[f'{structure}_{cl}'].to_csv(f'{result_folder_path}/gpTest_{structure}_{cl}_r{latent_leiden_resolution}.csv')
+        
+        '''
         for cl in clusters:
-            print(cl)
-            enriched_gps = model.run_differential_gp_tests(
-                cat_key=latent_cluster_key,
-                selected_cats = [cl],
-                comparison_cats=[x for x in clusters if x != cl],
-                log_bayes_factor_thresh=log_bayes_factor_thresh)
-            # res[f'{structure}_{cl}'] = model.adata.uns['nichecompass_differential_gp_test_results'][model.adata.uns['nichecompass_differential_gp_test_results']['p_h1']<0.05]
-            res[f'{structure}_{cl}'] = model.adata.uns[differential_gp_test_results_key]
-            res[f'{structure}_{cl}'].to_csv(f'{result_folder_path}/gpTest_{structure}_{cl}.csv')
+            if not os.path.exists(f'{result_folder_path}/gpTest_{structure}_{cl}_r{latent_leiden_resolution}.csv'):
+                print(cl)
+                enriched_gps = model.run_differential_gp_tests(
+                    cat_key=latent_cluster_key,
+                    selected_cats = [cl],
+                    comparison_cats=[x for x in clusters if x != cl],
+                    log_bayes_factor_thresh=log_bayes_factor_thresh)
+                res[f'{structure}_{cl}'] = model.adata.uns[differential_gp_test_results_key]
+                res[f'{structure}_{cl}'].to_csv(f'{result_folder_path}/gpTest_{structure}_{cl}_r{latent_leiden_resolution}.csv')
+        
 
 
 

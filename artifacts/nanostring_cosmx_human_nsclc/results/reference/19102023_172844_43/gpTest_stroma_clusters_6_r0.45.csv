@@ -1,0 +1,3 @@
+,category,gene_program,p_h0,p_h1,log_bayes_factor
+0,6,Ins1_ligand_receptor_target_gene_GP,0.08222350022642506,0.9177764997735749,-2.412512744632677
+1,6,Ins2_ligand_receptor_target_gene_GP,0.9114216328015098,0.08857836719849022,2.331117949077396
