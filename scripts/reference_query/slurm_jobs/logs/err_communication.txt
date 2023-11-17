@@ -1,0 +1,2 @@
+/var/spool/slurmd/job14225599/slurm_script: line 13: 2090604 Killed                  python ./communication.py
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=14225599.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

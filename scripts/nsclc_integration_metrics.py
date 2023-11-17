@@ -5,13 +5,20 @@ import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-m', '--model')
+parser.add_argument('-b', '--batch')
+parser.add_argument('-l', '--latent')
+parser.add_argument('-wS', '--withinSample', action='store_true')
 
 model_label = parser.parse_args().model
+batch_key = parser.parse_args().batch
+latent_key = parser.parse_args().latent
+within_sample = parser.parse_args().withinSample
+
 dataset = 'nanostring_cosmx_human_nsclc'
-model_type = 'reference'
+model_type = 'reference_query_mapping'
 cell_type_key='cell_type'
-batch_key='batch'
-latent_key='nichecompass_latent'
+# batch_key='mapping_entity'
+# latent_keys=['nichecompass_latent','X_pca']
 
 # load model
 adata = sc.read_h5ad(f'/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/artifacts/{dataset}/models/{model_type}/{model_label}/{dataset}_{model_type}.h5ad')
@@ -23,7 +30,19 @@ adata.obs[cell_type_key] = adata.obs['cell_type_original'].map({
     'mDC': 'DC/monocyte', 'pDC': 'DC/monocyte', 'monocyte': 'DC/monocyte', 'macrophage': 'macrophage', 'mast': 'mast'
 }).astype("category")
 
+
+# keep only those from the same replicate as the query
+if within_sample:
+    sample_name = adata.obs.loc[adata.obs.mapping_entity == 'query','patient'].unique()[0]
+    batches = adata.obs.loc[adata.obs.patient == sample_name,'batch'].unique()
+    if len(batches) > 1:
+        adata = adata[adata.obs.patient == sample_name]
+    
+
 # Run scBI benchmark
+if latent_key == 'X_pca':
+    sc.pp.scale(adata)
+    sc.tl.pca(adata, svd_solver='arpack')
 bm = Benchmarker(
     adata,
     batch_key=batch_key,
@@ -35,4 +54,4 @@ bm = Benchmarker(
 )
 bm.benchmark()
 df = bm.get_results(min_max_scale=False)
-df.to_csv(f'/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/artifacts/{dataset}/results/{model_type}/{model_label}/scbi_metrics_m.csv')
+df.to_csv(f'/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass-reproducibility/artifacts/{dataset}/results/{model_type}/{model_label}/scbi_metrics_{latent_key}_{batch_key}.csv')

@@ -1,0 +1,16 @@
+,source,target,strength,strength_unscaled,edge_type
+0,18,18,1.0,892.2946877261222,Spp1_ligand_receptor_target_gene_GP
+1,18,3,0.27,243.37163523314427,Spp1_ligand_receptor_target_gene_GP
+2,3,3,0.25,225.11351428643863,Spp1_ligand_receptor_target_gene_GP
+3,3,18,0.15,130.11701525212442,Spp1_ligand_receptor_target_gene_GP
+4,18,9,0.08,72.48652101900836,Spp1_ligand_receptor_target_gene_GP
+5,9,18,0.06,54.69452541074347,Spp1_ligand_receptor_target_gene_GP
+6,9,9,0.05,42.613441625687585,Spp1_ligand_receptor_target_gene_GP
+7,9,3,0.05,41.2913634781333,Spp1_ligand_receptor_target_gene_GP
+8,3,9,0.04,36.43242631081181,Spp1_ligand_receptor_target_gene_GP
+9,3,10,0.02,21.90047115492346,Spp1_ligand_receptor_target_gene_GP
+10,18,10,0.02,19.911330469794084,Spp1_ligand_receptor_target_gene_GP
+11,10,3,0.02,16.41122660167301,Spp1_ligand_receptor_target_gene_GP
+12,10,10,0.01,9.342635417772891,Spp1_ligand_receptor_target_gene_GP
+13,10,18,0.01,8.984520774811543,Spp1_ligand_receptor_target_gene_GP
+14,18,12,0.01,5.694816498346509,Spp1_ligand_receptor_target_gene_GP

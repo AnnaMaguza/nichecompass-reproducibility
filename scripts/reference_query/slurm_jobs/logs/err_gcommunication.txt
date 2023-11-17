@@ -1,0 +1,2 @@
+/lustre/groups/imm01/workspace/irene.bonafonte/Projects/2023May_nichecompass/nichecompass/nichecompass/utils/analysis.py:927: ImplicitModificationWarning: Trying to modify attribute `.obs` of view, initializing view as actual.
+  model.adata.obs[f"{gp}_source_score"] = agg_gp_source_score
