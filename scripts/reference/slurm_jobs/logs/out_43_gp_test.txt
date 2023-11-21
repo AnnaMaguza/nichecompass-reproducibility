@@ -17,14 +17,7 @@ lymphoid_clusters
 macrophage_clusters
 neutrophil_clusters
 stroma_clusters
-4
-1
-6
-9
-8
-10
 tumor_clusters
-2
+tumor_clusters_s9
+0
 5
-7
-11
